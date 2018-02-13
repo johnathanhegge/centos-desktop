@@ -1,2 +1,2 @@
 # centos-desktop
-CentOS 6 Desktop (graphical) base Docker image for JARVICE
+CentOS 7 Desktop (graphical) Docker image for JARVICE
