@@ -1,13 +1,16 @@
 FROM centos:7
 LABEL maintainer="Nimbix, Inc."
 
-ENV GIT_BRANCH testing
+# Update SERIAL_NUMBER to force rebuild of all layers (don't use cached layers)
+ARG SERIAL_NUMBER
+ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20180705.1000}
+
+ARG GIT_BRANCH
+ENV GIT_BRANCH ${GIT_BRANCH:-master}
+
 RUN curl -H 'Cache-Control: no-cache' \
        https://raw.githubusercontent.com/nimbix/image-common/$GIT_BRANCH/install-nimbix.sh \
        | bash -s -- --setup-nimbix-desktop --image-common-branch $GIT_BRANCH
-#RUN curl -H 'Cache-Control: no-cache' \
-#        https://raw.githubusercontent.com/nimbix/image-common/master/install-nimbix.sh \
-#        | bash -s -- --setup-nimbix-desktop
 
 ADD NAE/AppDef.json /etc/NAE/AppDef.json
 
