@@ -16,6 +16,8 @@ ADD NAE/AppDef.json /etc/NAE/AppDef.json
 
 RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://api.jarvice.com/jarvice/validate
 
+RUN yum -y update && yum clean all
+
 # Expose port 22 for local JARVICE emulation in docker
 EXPOSE 22
 
