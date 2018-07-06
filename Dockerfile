@@ -3,14 +3,14 @@ LABEL maintainer="Nimbix, Inc."
 
 # Update SERIAL_NUMBER to force rebuild of all layers (don't use cached layers)
 ARG SERIAL_NUMBER
-ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20180706.1130}
+ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20180706.1230}
 
 ARG GIT_BRANCH
-ENV GIT_BRANCH ${GIT_BRANCH:-testlock}
+ENV GIT_BRANCH ${GIT_BRANCH:-master}
 
 RUN curl -H 'Cache-Control: no-cache' \
        https://raw.githubusercontent.com/nimbix/image-common/$GIT_BRANCH/install-nimbix.sh \
-       | bash -s -- --setup-nimbix-desktop --setup-realvnc --image-common-branch $GIT_BRANCH
+       | bash -s -- --setup-nimbix-desktop --image-common-branch $GIT_BRANCH
 
 ADD NAE/AppDef.json /etc/NAE/AppDef.json
 
