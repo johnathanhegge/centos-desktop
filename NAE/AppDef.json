@@ -1,5 +1,5 @@
 {
-  "name": "CentOS Linux desktop",
+  "name": "CentOS desktop",
   "description": "CentOS Linux desktop application",
   "author": "jhegge",
   "licensed": true,
@@ -11,9 +11,7 @@
   ],
   "vault-types": [
     "FILE",
-    "BLOCK",
-    "BLOCK_ARRAY",
-    "OBJECT"
+    "BLOCK"
   ],
   "commands": {
     "Batch": {
@@ -51,14 +49,14 @@
       "path": "/sbin/init",
       "interactive": true,
       "name": "Server",
-      "description": "Launch a session with all boot services, including SSH (if installed).  Connection address and credentials will appear in your web browser once available.",
+      "description": "Launch a session with all boot services, including SSH (if installed)",
       "parameters": {}
     },
     "GUI": {
       "path": "/usr/local/bin/nimbix_desktop",
       "interactive": true,
       "name": "GUI",
-      "description": "Run a GUI command, and connect interactively directly from your web browser (requires Nimbix Desktop in image).",
+      "description": "Run a GUI command, and connect interactively directly from your web browser (requires Nimbix Desktop in image)",
       "parameters": {
         "command": {
           "name": "Command",
