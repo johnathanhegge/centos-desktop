@@ -52,18 +52,26 @@
       "description": "Launch a session with all boot services, including SSH (if installed)",
       "parameters": {}
     },
-    "GUI": {
+    "Desktop": {
       "path": "/usr/local/bin/nimbix_desktop",
       "interactive": true,
       "name": "GUI",
       "description": "Run a GUI command, and connect interactively directly from your web browser (requires Nimbix Desktop in image)",
       "parameters": {
+        "launcher": {
+          "name": "launcher",
+          "description": "launch script",
+          "type": "CONST",
+          "value": "/usr/local/scripts/launch-firefox.sh",
+          "positional": true,
+          "required": true
+        },
         "command": {
           "name": "Command",
           "description": "Command to run",
           "type": "STR",
           "positional": true,
-          "required": true
+          "required": false
         }
       }
     }
