@@ -2,7 +2,8 @@
 
 set -x
 
-. "$(dirname $0)/setenv.sh" "$1"
+. /etc/JARVICE/jobenv.sh
+. /etc/JARVICE/jobinfo.sh
 
 env
 
