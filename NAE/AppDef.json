@@ -55,7 +55,7 @@
     "Firefox": {
       "path": "/usr/local/bin/nimbix_desktop",
       "interactive": true,
-      "name": "GUI",
+      "name": "Firefox",
       "description": "Run a GUI command, and connect interactively directly from your web browser (requires Nimbix Desktop in image)",
       "parameters": {
         "launcher": {
