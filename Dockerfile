@@ -3,7 +3,7 @@ LABEL maintainer="Nimbix, Inc."
 
 # Update SERIAL_NUMBER to force rebuild of all layers (don't use cached layers)
 ARG SERIAL_NUMBER
-ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20190308.1100}
+ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20190404.2300}
 
 ARG GIT_BRANCH
 ENV GIT_BRANCH ${GIT_BRANCH:-turbovnc}
