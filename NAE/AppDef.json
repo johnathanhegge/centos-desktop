@@ -14,6 +14,22 @@
     "BLOCK"
   ],
   "commands": {
+    "Firefox": {
+      "path": "/usr/local/bin/nimbix_desktop",
+      "interactive": true,
+      "name": "Firefox",
+      "description": "Run Firefox on the desktop",
+      "parameters": {
+        "command": {
+          "name": "Command",
+          "description": "Command to run",
+          "type": "CONST",
+          "value": "firefox",
+          "positional": true,
+          "required": true
+        }
+      }
+    },
     "Batch": {
       "path": "/bin/bash",
       "interactive": false,
