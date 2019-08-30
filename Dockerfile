@@ -3,10 +3,11 @@ LABEL maintainer="Nimbix, Inc."
 
 # Update SERIAL_NUMBER to force rebuild of all layers (don't use cached layers)
 ARG SERIAL_NUMBER
-ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20190829.1100}
+ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20190830.1030}
 
 ARG GIT_BRANCH
 ENV GIT_BRANCH ${GIT_BRANCH:-novnc-update}
+#ENV GIT_BRANCH ${GIT_BRANCH:-master}
 
 RUN yum -y install epel-release && \
     yum -y install firefox s3cmd && \
