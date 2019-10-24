@@ -6,8 +6,7 @@ ARG SERIAL_NUMBER
 ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20190904.1030}
 
 ARG GIT_BRANCH
-ENV GIT_BRANCH ${GIT_BRANCH:-novnc-update}
-#ENV GIT_BRANCH ${GIT_BRANCH:-master}
+ENV GIT_BRANCH ${GIT_BRANCH:-centos7.7-test}
 
 RUN yum -y install epel-release && \
     yum -y install firefox s3cmd && \
