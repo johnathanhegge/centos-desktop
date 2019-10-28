@@ -9,8 +9,9 @@ ARG GIT_BRANCH
 ENV GIT_BRANCH ${GIT_BRANCH:-centos7.7-test}
 
 RUN yum -y install epel-release && \
-    yum -y install firefox s3cmd && \
-    curl -H 'Cache-Control: no-cache' \
+    yum -y install firefox s3cmd
+
+RUN curl -H 'Cache-Control: no-cache' \
     https://raw.githubusercontent.com/nimbix/image-common/$GIT_BRANCH/install-nimbix.sh \
     | bash -s -- --setup-nimbix-desktop --image-common-branch $GIT_BRANCH --skip-infiniband
 
