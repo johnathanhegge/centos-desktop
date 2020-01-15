@@ -3,17 +3,21 @@ LABEL maintainer="Nimbix, Inc."
 
 # Update SERIAL_NUMBER to force rebuild of all layers (don't use cached layers)
 ARG SERIAL_NUMBER
-ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20190924.1030}
+ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20200115.1030}
 
 ARG GIT_BRANCH
-ENV GIT_BRANCH ${GIT_BRANCH:-centos7.7-test}
+#ENV GIT_BRANCH ${GIT_BRANCH:-centos7.7-test}
+ENV GIT_BRANCH ${GIT_BRANCH:-master}
 
 RUN yum -y install epel-release && \
     yum -y install firefox s3cmd
 
+#RUN curl -H 'Cache-Control: no-cache' \
+#    https://raw.githubusercontent.com/nimbix/image-common/$GIT_BRANCH/install-nimbix.sh \
+#    | bash -s -- --setup-nimbix-desktop --image-common-branch $GIT_BRANCH --skip-infiniband
 RUN curl -H 'Cache-Control: no-cache' \
     https://raw.githubusercontent.com/nimbix/image-common/$GIT_BRANCH/install-nimbix.sh \
-    | bash -s -- --setup-nimbix-desktop --image-common-branch $GIT_BRANCH --skip-infiniband
+    | bash -s -- --setup-nimbix-desktop --image-common-branch $GIT_BRANCH
 
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
 
