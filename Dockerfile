@@ -1,4 +1,5 @@
-FROM nvidia/cuda:10.1-cudnn7-devel-centos7
+#FROM nvidia/cuda:10.1-cudnn7-devel-centos7
+FROM nvidia/9.2-cudnn7-devel-centos7
 LABEL maintainer="Nimbix, Inc."
 
 # Update SERIAL_NUMBER to force rebuild of all layers (don't use cached layers)
