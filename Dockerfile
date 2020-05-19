@@ -3,7 +3,7 @@ LABEL maintainer="Nimbix, Inc."
 
 # Update SERIAL_NUMBER to force rebuild of all layers (don't use cached layers)
 ARG SERIAL_NUMBER
-ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20200115.1030}
+ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20200519.1030}
 
 ARG GIT_BRANCH
 #ENV GIT_BRANCH ${GIT_BRANCH:-centos7.7-test}
